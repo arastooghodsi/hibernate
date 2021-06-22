@@ -37,6 +37,8 @@
      	<mapping class="chapter07.Programmer"/>
      	<mapping class="chapter07.Manager"/>
      	<mapping class="chapter08HQL.Book"/>
+     	<mapping class="chapter08HQLNamedQuery.NamedQueryBook"/>
+
        	
        
         
