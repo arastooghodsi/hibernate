@@ -38,6 +38,8 @@
      	<mapping class="chapter07.Manager"/>
      	<mapping class="chapter08HQL.Book"/>
      	<mapping class="chapter08HQLNamedQuery.NamedQueryBook"/>
+     	<mapping class="chapter08HQLNamedQuery.BookCategory"/>
+     	<mapping class="chapter08Criteria.CriteriaBook"/>
 
        	
        

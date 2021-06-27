@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -20,12 +21,22 @@ public class NamedQueryBook {
 	private String title;
 	private String author;
 	
-		
+	@ManyToOne
+	private BookCategory bookCategory = new BookCategory();
+	
+	
+	
 	@Override
 	public String toString() {
-		return "NamedQueryBook [id=" + id + ", title=" + title + ", author=" + author + "]";
+		return "NamedQueryBook [id=" + id + ", title=" + title + ", author=" + author + ", bookCategory=" + bookCategory.getMyBookCategory()
+				+ "]";
 	}
-	
+	public BookCategory getBookCategory() {
+		return bookCategory;
+	}
+	public void setBookCategory(BookCategory bookCategory) {
+		this.bookCategory = bookCategory;
+	}
 	public Integer getId() {
 		return id;
 	}

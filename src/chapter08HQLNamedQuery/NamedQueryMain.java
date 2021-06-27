@@ -3,10 +3,13 @@ package chapter08HQLNamedQuery;
 import java.util.List;
 
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+import chapter06.Book;
 
 public class NamedQueryMain {
 
@@ -37,17 +40,51 @@ public class NamedQueryMain {
 
 		
 		//Another NamedQuery
-		Query query = session.getNamedQuery("bookById");
-		query.setParameter("idValue", 26);
+//		Query query = session.getNamedQuery("bookById");
+//		query.setParameter("idValue", 26);
+//		
+//		List<NamedQueryBook> books = query.list();		
 		
-		List<NamedQueryBook> books = query.list();		
+		//Nothing
+//		NamedQueryBook namedQueryBook = new NamedQueryBook();
+//		namedQueryBook.setTitle("Java_Programing");
+//		namedQueryBook.setAuthor("Arastoo");
+//		
+//		BookCategory bookCategory = new BookCategory();
+//		bookCategory.setMyBookCategory("Programming");
+//		
+//		namedQueryBook.setBookCategory(bookCategory);
+//		
+//		session.save(namedQueryBook);
+//		session.save(bookCategory);
+		
+		
+		//Native SQL
+//		String sql = "select * from namedquerybook";
+		
+		
+		//Join with sql
+//		String sql = "select * from namedquerybook as nqb join bookcategory as bc on nqb.bookcategory_id = bc.id";
+		
+		
+//		SQLQuery sqlQuery = session.createSQLQuery(sql);
+//		sqlQuery.addEntity(NamedQueryBook.class);
+//
+//		List<NamedQueryBook> books = sqlQuery.list();
+
+		
+		//OOP method for these instructions
+//		NamedQueryBook namedQueryBook = session.get(NamedQueryBook.class, 1);
+		
 		tx.commit();
 		session.close();
 		
-		for(NamedQueryBook book: books) {
-			System.out.println(book.toString());
-		}
-		
+//		for(NamedQueryBook book: books) {
+//			System.out.println(book.toString());
+//		}
+
+		//OOP
+//		System.out.println(namedQueryBook.getBookCategory().getMyBookCategory());
 		
 	}
 
