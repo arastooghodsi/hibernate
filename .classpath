@@ -9,5 +9,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/PostgreSQL"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JPA"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ehcache"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
