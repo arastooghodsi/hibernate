@@ -56,16 +56,31 @@ public class Main {
 //		session.close();
 		
 		//Get data & update them & then get again with same id after close session 
-		CachingBook cachingBook9 = session.get(CachingBook.class, 6);
-		cachingBook9.setTitle("updated_title");
+//		CachingBook cachingBook9 = session.get(CachingBook.class, 6);
+//		cachingBook9.setTitle("updated_title");
+//		tx.commit();
+//		session.close();
+//		Session newSession = sf.openSession();
+//		newSession.beginTransaction();
+//		CachingBook cachingBook10 = newSession.get(CachingBook.class, 6); 
+//		newSession.getTransaction().commit();
+//		newSession.close();
+		
+		
+		//Query Cache(Across Application)
+		//Get data & update them & then get again with same id after close session 
+		Query query1 = session.createQuery("from Book");
+		query1.setCacheable(true);
+		List<CachingBook> cachingBooks = query1.list();
 		tx.commit();
 		session.close();
 		Session newSession = sf.openSession();
 		newSession.beginTransaction();
-		CachingBook cachingBook10 = newSession.get(CachingBook.class, 6); 
+		Query query2 = newSession.createQuery("from Book");
+		query2.setCacheable(true);
+		List<CachingBook> cachingOtherBooks = query2.list();
 		newSession.getTransaction().commit();
 		newSession.close();
-		
 		
 		
 //		tx.commit();
