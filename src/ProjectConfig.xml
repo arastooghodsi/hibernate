@@ -32,7 +32,10 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
+                
+        <!-- Batch Processing -->
+        <property name="hibernate.jdbc.batch_size">100</property>
 
         <!-- Names the annotated entity class -->
        	<!-- <mapping class="chapter06.Book"/> -->
@@ -46,6 +49,7 @@
      	<mapping class="chapter08HQLNamedQuery.BookCategory"/>
      	<mapping class="chapter08Criteria.CriteriaBook"/>
      	<mapping class="chapter09Caching.CachingBook"/>
+     	<mapping class="chapter11BatchProcessing.BatchBook"/>
 
        	
        
